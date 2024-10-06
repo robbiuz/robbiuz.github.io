@@ -33,7 +33,7 @@
         <header>
         <div class="header-left">
             <a href="index.html" class="home">
-            <img class= "robbi_pin" src="robbi_logo.png">
+            <img class= "robbi_pin" src="sss.pgn">
             </a>
             </div>
             
@@ -48,11 +48,11 @@
                     <img src="close.svg" class="close_img">
                     </a></li>
                 <li> <p>Languages</p></li>
-                   <li>  <a  class="gts_images">Uzbek</a>  <img src="uzbek.png"></li>
+                   <li>  <a  onclick="changeLanguage('uz')" class="gts_images">O'zbekcha</a>  <img src="uzbek.png"></li>
 
-                <li>  <a  class="gts_download">English</a> <img src="english.png"></li>
+                <li>  <a  onclick="changeLanguage('en')" class="gts_download">English</a> <img src="english.png"></li>
                 
-                <li>  <a  class="gts_start">Russain</a>  <img src="russain.png"></li>
+                <li>  <a  onclick="changeLanguage('ru')" class="gts_start">Russkiy</a>  <img src="russain.png"></li>
             </ul>
         </nav>
                 
@@ -64,7 +64,7 @@
         
         
         <main>
-            <p class="intro_text">Discover, rate, share<br>with Robbi.uz</p>
+            <p class="intro_text" id="welcome_text">Discover, rate, share<br>with Robbi.uz</p>
             
               <div class="images_example" >
              <img class ="hotels"
@@ -80,8 +80,8 @@
             </div>
             
             
-            <p class="about_text">About Robbi.uz</p>
-            <p class="small_description">Discover the Best of Uzbekistan with Robbi.uz</p>
+            <p class="about_text" id="about_text">About Robbi.uz</p>
+            <p class="small_description" id="discover_the_best">Discover the Best of Uzbekistan with Robbi.uz</p>
             
             
             
@@ -90,7 +90,7 @@
             
 
             
-            <p class="introduction_full" >Welcome to Robbi.uz, the 
+            <p class="introduction_full" id="first_description">Welcome to Robbi.uz, the 
                 ultimate guide to finding and exploring the finest 
                 places and services across Uzbekistan. Whether you're 
                 searching for the best local restaurants, top-rated hotels, 
@@ -99,9 +99,9 @@
                 designed to make discovering hidden gems and reliable 
                 businesses easier than ever.</p>
             
-         <p class="small2_description">Why Robbi.uz?</p>
+         <p class="small2_description" id="why">Why Robbi.uz?</p>
             
-            <p class="introduction_full" >Robbi.uz was created with a single mission 
+            <p class="introduction_full" id="second_description">Robbi.uz was created with a single mission 
                 in mind: to connect people with the best local businesses
                 and services in Uzbekistan. We understand that whether you're 
                 a resident or a visitor, finding trustworthy and highly-rated 
@@ -110,9 +110,9 @@
                 real user reviews, and make informed decisions.</p>
             
             
-                     <p class="small2_description">What you can do on Robbi.uz</p>
+                     <p class="small2_description" id="what">What you can do on Robbi.uz?</p>
             
-            <p class="introduction_full" >•Search for Restaurants: Explore a diverse 
+            <p class="introduction_full" id="third_description" >•Search for Restaurants: Explore a diverse 
                 range of dining options, from local eateries to international cuisines.
                 View menus, read reviews, and find the best spots to satisfy your cravings.<br><br>
                 •Rate and Review Businesses: Share your experiences by rating businesses and leaving 
@@ -143,23 +143,19 @@
             src="last.jpg">
             </div>
             
-            <p class="about_text" >Key Features</p>
-            <p class="small_description">Find places near you</p>
-             <p class="introduction_full" >You can use our technology to find 
-                 the location of the specific place like hotel that is close to you.</p>
+            <p class="about_text" id="key_features">Key Features</p>
+            <p class="small_description" id="find">Find places near you</p>
+             <p class="introduction_full" id="fours_description">You can use our technology to find nearby locations, such as hotels, that are close to you.</p>
             
-            <p class="small_description">Separate classes</p>
-             <p class="introduction_full" >You can choose the tarif of the restaurant.
-                 You can choose from this 4 
-                 tarifs Gold, Silver, Standard or All at once.</p>
+            <p class="small_description" id="separate">Different tariffs</p>
+             <p class="introduction_full" id="fifes_description" >You can choose the tariff for the restaurant. You can select from these four options: Gold, Silver, Standard, or All at Once.</p>
             
-            <p class="small_description">Contact with location</p>
-             <p class="introduction_full" >You can contact with the business and place 
-                 that you are searching for.</p>
+            <p class="small_description" id="contact_location">Contact the location</p>
+             <p class="introduction_full"  id="sixst_description">You can contact the business and the location you are searching for.</p>
             
             
             
-            <p class="about_text" >Download App</p>
+            <p class="about_text"  id="download_app">Download App</p>
 
 
             
@@ -179,7 +175,7 @@
             <div class="bottom">
                 <p class="bottom_text">© 2024 Robbi.uz</p>
                  <hr class="line_vertical">
-                 <p class="contact_us">Contact Us</p>
+                 <p class="contact_us" id="contact">Contact Us</p>
                 <a href="index.html" class="call">
                 <img src="call.png">
                 </a>
@@ -207,6 +203,103 @@
         
         
         <script>
+            
+            const translations = {
+            en: {
+                welcome: "Discover, rate, share with Robbi.uz",
+                about: "About Robbi.uz",
+                discover_the_best:"Discover the Best of Uzbekistan with Robbi.uz",
+                first_description:"Welcome to Robbi.uz, the ultimate guide to finding and exploring the finest places and services across Uzbekistan. Whether you're searching for the best local restaurants, top-rated hotels, cozy cafés, bustling markets, or even essential services like hospitals and mosques, Robbi.uz has you covered. Our app is designed to make discovering hidden gems and reliable businesses easier than ever.",
+                why:"Why Robbi.uz?",
+                second_description:"Robbi.uz was created with a single mission in mind: to connect people with the best local businesses and services in Uzbekistan. We understand that whether you're a resident or a visitor, finding trustworthy and highly-rated places can be challenging. That’s where we come in. With Robbi.uz, you can explore a variety of categories, read real user reviews, and make informed decisions.",
+                what:"What you can do on Robbi.uz",
+                third_description:"•Search for Restaurants: Explore a diverse range of dining options, from local eateries to international cuisines. View menus, read reviews, and find the best spots to satisfy your cravings.<br><br>•Rate and Review Businesses: Share your experiences by rating businesses and leaving reviews to help others make informed choices.<br><br>•Explore Local Services: Find the nearest hospitals, clinics, mosques, and more. Get directions, check working hours, and discover services that suit your needs.<br><br>•View Business Details: Get all the information you need, from locations and working hours to contact details, ensuring you have everything at your fingertips.",
+                images:"Screenshots",
+                key_features:"Key Features",
+                find:"Find places near you",
+                fours_description:"You can use our technology to find nearby locations, such as hotels, that are close to you.",
+                separate:"Different tariffs",
+                fifes_description:"You can choose the tariff for the restaurant. You can select from these four options: Gold, Silver, Standard, or All at Once.",
+                contact_location:"Contact the location",
+                sixst_description:"You can contact the business and the location you are searching for",
+                download_app:"Download App",
+                contact:""
+                
+                
+                
+            },
+            uz: {
+                welcome: "Robbi.uz bilan kashf eting va ulashing",
+                about: "Robbi.uz haqida",
+                discover_the_best:"Robbi.uz bilan O'zbekistonning eng yaxshisini kashf eting",
+                first_description:"Robbi.uz-ga xush kelibsiz, O'zbekistondagi eng yaxshi joylar va xizmatlarni topish va o'rganish uchun eng yaxshi qo'llanma. Agar siz eng yaxshi mahalliy restoranlar, eng yuqori reytingdagi mehmonxonalar, qulay kafelar, shovqinli bozorlar yoki hatto shifoxonalar va masjidlar kabi zarur xizmatlarni qidirmoqchi bo'lsangiz, Robbi.uz sizni qamrab oladi. Bizning ilovamiz yashirin xazinalar va ishonchli bizneslarni topishni osonlashtirish uchun mo'ljallangan.",
+                why:"Nima uchun Robbi.uz?",
+                second_description:"Robbi.uz bitta maqsad bilan yaratildi: odamlarni O'zbekistondagi eng yaxshi mahalliy bizneslar va xizmatlar bilan bog'lash. Biz tushunamizki, siz mahalliy aholimi yoki mehmonmi, ishonchli va yuqori reytingga ega joylarni topish qiyin bo'lishi mumkin. Biz shu yerda bormiz. Robbi.uz bilan siz turli toifalarni o'rganishingiz, haqiqiy foydalanuvchi sharhlarini o'qishingiz va ma'lumotli qarorlar qabul qilishingiz mumkin.",
+                what:"Robbi.uz-da nima qilishingiz mumkin?",
+                third_description:"•Restoranlarni qidirish: Mahalliy ovqatlanish joylaridan tortib, xalqaro taomlargacha bo'lgan turli ovqatlanish variantlarini o'rganing. Menyularni ko'ring, sharhlarni o'qing va ishtahangizni qondirish uchun eng yaxshi joylarni toping.<br><br>•Bizneslarni baholash va sharh berish: Tajribangizni baholash va sharhlar qoldirish orqali boshqalarga ma'lumotli qarorlar qabul qilishda yordam bering.<br><br>•Mahalliy xizmatlarni o'rganing: Eng yaqin shifoxonalar, klinikalar, masjidlar va boshqa xizmatlarni toping. Yo'nalishlarni oling, ish vaqtlarini tekshiring va ehtiyojlaringizga mos xizmatlarni kashf eting.<br><br>•Biznes ma'lumotlarini ko'rish: Joylashuvlar va ish vaqtlaridan tortib, aloqa ma'lumotlarigacha, kerakli barcha ma'lumotlarni oling, shunda hamma narsa sizning qo'lingizda bo'ladi.",
+                images:"Rasimlar",
+                key_features:"Asosiy xususiyatlar",
+                find:"Sizga yaqin joylarni toping",
+                fours_description:"Siz bizning texnologiyamizdan sizga yaqin joylashuvlarni, masalan, mehmonxonalarni topish uchun foydalanishingiz mumkin.",
+                separate:"Turli tariflar",
+                fifes_description:"Siz restoranga tarifni tanlashingiz mumkin. Siz quyidagi to'rtta variantdan birini tanlashingiz mumkin: Oltin, Kumush, Standart yoki Barchasi bir vaqtda.",
+                contact_location:"Joylashuv bilan bog'laning",
+                sixst_description:"Siz qidirayotgan biznes va joylashuv bilan bog'lanishingiz mumkin.",
+                download_app:"Ilovani yuklab oling",
+                contact:"Bog'lanish"
+
+            },
+            ru: {
+                welcome:"Открывайте, оценивайте, делитесь с Robbi.uz",
+                about: "О Robbi.uz",   
+                discover_the_best:"Откройте лучшее в Узбекистане с Robbi.uz",
+                first_description:"Добро пожаловать в Robbi.uz, идеальное руководство по поиску и исследованию лучших мест и услуг по всему Узбекистану. Независимо от того, ищете ли вы лучшие местные рестораны, отели с высоким рейтингом, уютные кафе, шумные рынки или даже важные услуги, такие как больницы и мечети, Robbi.uz поможет вам. Наше приложение создано для того, чтобы сделать поиск скрытых жемчужин и надежных бизнесов проще, чем когда-либо.",
+                why:"Почему Robbi.uz?",
+                second_description:"Robbi.uz была создана с единственной целью: соединить людей с лучшими местными бизнесами и услугами в Узбекистане. Мы понимаем, что, будь вы жителем или гостем, найти надежные и высоко оцененные места может быть сложно. Вот здесь и вступаем мы. С Robbi.uz вы можете исследовать различные категории, читать реальные отзывы пользователей и принимать обоснованные решения.",
+                what:"Что вы можете делать на Robbi.uz?",
+                third_description:"•Поиск ресторанов: Исследуйте разнообразные варианты питания, от местных кафе до международной кухни. Просматривайте меню, читайте отзывы и находите лучшие места, чтобы удовлетворить свои желания.<br><br>•Оценка и отзыв о бизнесе: Делитесь своим опытом, оценивая бизнес и оставляя отзывы, чтобы помочь другим принимать обоснованные решения.<br><br>•Изучение местных услуг: Найдите ближайшие больницы, клиники, мечети и многое другое. Получите маршруты, проверьте часы работы и откройте для себя услуги, которые соответствуют вашим потребностям.<br><br>•Просмотр информации о бизнесе: Получите всю необходимую информацию, от местоположений и часов работы до контактных данных, чтобы все было у вас под рукой.",
+                images:"Скриншоты",
+                key_features:"Ключевые особенности",
+                find:"Найдите места рядом с вами",
+                fours_description:"Вы можете использовать нашу технологию, чтобы найти местоположение конкретного места, например, отеля, который находится рядом с вами.",
+                separate:"Разные тарифы",
+                fifes_description:"Вы можете выбрать тариф для ресторана. Вы можете выбрать один из четырех вариантов: Золотой, Серебряный, Стандартный или Все сразу.",
+                contact_location:"Связаться с местоположением",
+                sixst_description:"Вы можете связаться с бизнесом и местоположением, которое вы ищете.",
+                download_app:"Скачать приложение",
+                contact:"Связь"
+
+
+                
+            }    
+        };
+            
+             function changeLanguage(language) {
+        
+            document.getElementById("third_description").innerHTML = translations[language].third_description;
+            document.getElementById("welcome_text").innerHTML = translations[language].welcome;
+            document.getElementById("about_text").innerHTML = translations[language].about;
+            document.getElementById("discover_the_best").innerHTML = translations[language].discover_the_best;
+            document.getElementById("first_description").innerHTML = translations[language].first_description;
+            document.getElementById("why").innerHTML = translations[language].why;
+            document.getElementById("second_description").innerHTML = translations[language].second_description;
+            document.getElementById("what").innerHTML = translations[language].what;
+            document.getElementById("images").innerHTML = translations[language].images;
+            document.getElementById("key_features").innerHTML = translations[language].key_features;
+            document.getElementById("find").innerHTML = translations[language].find;
+            document.getElementById("fours_description").innerHTML = translations[language].fours_description;
+            document.getElementById("separate").innerHTML = translations[language].separate;
+            document.getElementById("fifes_description").innerHTML = translations[language].fifes_description;
+            document.getElementById("contact_location").innerHTML = translations[language].contact_location;
+            document.getElementById("sixst_description").innerHTML = translations[language].sixst_description;
+            document.getElementById("download_app").innerHTML = translations[language].download_app;
+            document.getElementById("contact").innerHTML = translations[language].contact;
+     
+        }
+            
+            //////////////////////////////////
+            
+            
         
             const menu = document.querySelector('ul');
             const menuBtn = document.querySelector('.menu');
@@ -230,6 +323,11 @@
         </script>
         
     </body>
+
+
+    
+    
+</html>
 
 
     
