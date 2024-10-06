@@ -39,7 +39,7 @@
             <nav>
             <a class="menu">
                 <img src="segment.svg">
-                <p class="language">EN</p>
+                <p class="language" id="language">EN</p>
                 </a>
                 
             <ul class="ul">
@@ -47,11 +47,11 @@
                     <img src="close.svg" class="close_img">
                     </a></li>
                 <li> <p>Languages</p></li>
-                   <li>  <a  onclick="changeLanguage('uz')" class="gts_images">O'zbekcha</a>  <img src="uzbek.png"></li>
+                <li>  <a  onclick="changeLanguage('uz')" id="uz">Uzbek</a>  <img src="uzbek.png"></li>
 
-                <li>  <a  onclick="changeLanguage('en')" class="gts_download">English</a> <img src="english.png"></li>
+                <li>  <a  onclick="changeLanguage('en')" id="en">English</a> <img src="english.png"></li>
                 
-                <li>  <a  onclick="changeLanguage('ru')" class="gts_start">Russkiy</a>  <img src="russain.png"></li>
+                <li>  <a  onclick="changeLanguage('ru')" id="ru">Russian</a>  <img src="russain.png"></li>
             </ul>
         </nav>
                 
@@ -274,6 +274,16 @@
         };
             
              function changeLanguage(language) {
+
+            const textElement = document.getElementById("language");
+
+            if (language === 'en') {
+                textElement.textContent = "EN";
+            } else if (language === 'uz') {
+                textElement.textContent = "UZ";
+            } else if (language === 'ru') {
+                textElement.textContent = "RU";
+            }
         
             document.getElementById("third_description").innerHTML = translations[language].third_description;
             document.getElementById("welcome_text").innerHTML = translations[language].welcome;
